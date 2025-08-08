@@ -1,54 +1,96 @@
-🏦 Bank Customer Churn Prediction 
-📌 Problem Statement
+# 🏦 Bank Customer Churn Prediction
+
+## 📌 Problem Statement
 Predict whether a customer will exit the bank (churn) based on their demographic, account, and transaction-related data.
 
-🎯 Objectives
-Predict customer churn using machine learning models.
-Analyze key factors that influence customer churn.
-Evaluate and compare models using accuracy, precision, recall, and F1-score.
-Recommend actions for proactive customer retention.
+---
 
-📊 Dataset Overview
-Features include age, balance, tenure, salary, geography, credit card status, and more.
-Contains class imbalance (more non-churn than churn).
-Includes both categorical and numerical data.
+## 🎯 Objectives
 
-🧹 Data Preprocessing
-Handled missing values (mode for categorical, 0 for numerical).
-Encoded categorical variables using one-hot encoding.
-Split into training and test datasets (80/20).
+- Predict customer churn using machine learning models.
+- Analyze key factors that influence customer churn.
+- Evaluate and compare models using **Accuracy**, **Precision**, **Recall**, and **F1-score**.
+- Recommend actions for proactive customer retention.
 
-📈 Exploratory Data Analysis (EDA)
-Most customers are from France.
-Majority have 1–2 products, are aged 30–40, and have similar salary distribution across gender.
+---
 
-Higher churn observed in:
-Inactive members
-Customers with short tenure
-Customers aged above 50
-Customers with 4 products and low salary
+## 📊 Dataset Overview
 
-🤖 Models Used
-Logistic Regression
-Decision Tree
-Random Forest
-Naive Bayes
-K-Nearest Neighbors (KNN)
+- Includes **demographic**, **account**, and **transactional** features:
+  - `Age`, `Balance`, `Tenure`, `EstimatedSalary`, `Geography`, `Gender`, `HasCrCard`, `IsActiveMember`, `NumOfProducts`, etc.
+- Dataset contains **class imbalance** (more non-churned than churned customers).
+- Mix of **categorical** and **numerical** variables.
 
-🏁 Model Performance
-All models reached ~79% accuracy.
-Random Forest offered balanced precision-recall and is suitable for deployment.
-Decision Tree is interpretable but prone to overfitting.
-Naive Bayes is fast but makes naive assumptions.
-KNN accuracy was ~76% and needs tuning.
+---
 
-🚀 Future Improvements
-Try advanced models (e.g., XGBoost, LightGBM).
+## 🧹 Data Preprocessing
 
-Apply PCA/LDA for feature engineering.
+- **Missing Values**:
+  - Categorical: Imputed using **mode**.
+  - Numerical: Imputed using **0** or appropriate statistical values.
+- **Categorical Encoding**:
+  - Applied **One-Hot Encoding** for `Geography` and `Gender`.
+- **Data Splitting**:
+  - Split into **training (80%)** and **testing (20%)** sets.
 
-Handle class imbalance with SMOTE or weighted loss.
+---
 
-📌 Final Recommendation
-Use Random Forest for deployment due to its performance, interpretability, and generalization ability.
+## 📈 Exploratory Data Analysis (EDA)
+
+- Most customers are from **France**.
+- Majority have **1–2 products**, aged **30–40**, and **similar salary distribution** across genders.
+  
+### Churn is higher among:
+- **Inactive members**
+- Customers with **short tenure**
+- Customers aged **above 50**
+- Customers with **4 products** and **low salary**
+
+---
+
+## 🤖 Models Used
+
+| Model              | Notes                                                 |
+|-------------------|--------------------------------------------------------|
+| Logistic Regression | Simple baseline, interpretable results               |
+| Decision Tree       | Clear decision paths, prone to **overfitting**       |
+| Random Forest       | **Best performance**, good generalization            |
+| Naive Bayes         | Very fast, assumes feature independence              |
+| K-Nearest Neighbors | Sensitive to feature scaling, needs parameter tuning |
+
+---
+
+## 🏁 Model Performance
+
+- **Overall Accuracy**: ~**79%** for most models.
+- **Random Forest**:
+  - **Best trade-off** between **precision** and **recall**.
+  - Chosen for **deployment**.
+- **Decision Tree**:
+  - Interpretable but may **overfit** on training data.
+- **Naive Bayes**:
+  - Fast and simple, but **naive assumptions** may hurt performance.
+- **KNN**:
+  - Accuracy ~**76%**, sensitive to `K` and distance metrics.
+
+---
+
+## 🚀 Future Improvements
+
+- Use advanced models like **XGBoost**, **LightGBM** for better performance.
+- Apply **PCA** or **LDA** for **feature engineering** and **dimensionality reduction**.
+- Handle **class imbalance** with:
+  - **SMOTE (Synthetic Minority Over-sampling Technique)**
+  - **Class-weighted loss functions**
+
+---
+
+## 📌 Final Recommendation
+
+Deploy the **Random Forest** model due to:
+- Strong and balanced performance.
+- Good generalization on unseen data.
+- Better interpretability compared to black-box models.
+
+---
 
