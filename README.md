@@ -1,4 +1,4 @@
-# 🏦 Bank Customer Churn Prediction
+# Predictive Analysis for Customer Churn
 
 ## 📌 Problem Statement
 Predict whether a customer will exit the bank (churn) based on their demographic, account, and transaction-related data.
